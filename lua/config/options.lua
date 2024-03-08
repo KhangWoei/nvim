@@ -1,3 +1,4 @@
+-- options.lua
 -- [[ Setting options ]]
 -- See `:help vim.o`
 
@@ -47,3 +48,14 @@ vim.o.expandtab = true
 -- Set map leader, this should probably be in a keymaps file? Idk
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+
+-- [[ Highlight on yank ]]
+-- See `:help vim.highlight.on_yank()`
+local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+vim.api.nvim_create_autocmd('TextYankPost', {
+    callback = function()
+        vim.highlight.on_yank()
+    end,
+    group = highlight_group,
+    pattern = '*',
+})
