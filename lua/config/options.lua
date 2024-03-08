@@ -45,7 +45,7 @@ vim.o.shiftwidth = 4
 vim.o.softtabstop = 4
 vim.o.expandtab = true
 
--- Set map leader, this should probably be in a keymaps file? Idk
+-- Set map leader
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 

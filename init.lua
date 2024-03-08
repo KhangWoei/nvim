@@ -30,6 +30,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+require("config.options")
+
 require('lazy').setup({
   spec = {
     { import = "plugins" },
@@ -37,7 +39,6 @@ require('lazy').setup({
   },
 }, {})
 
-require("config.options")
 require("config.keymaps")
 
 -- [[ Configure LSP ]]
