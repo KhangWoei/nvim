@@ -45,6 +45,9 @@ vim.o.shiftwidth = 4
 vim.o.softtabstop = 4
 vim.o.expandtab = true
 
+-- Set shell, TODO: Check which OS and open powershell or bash
+vim.opt.shell = 'powershell.exe'
+
 -- Set map leader
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
