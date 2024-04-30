@@ -37,3 +37,15 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = 
 
 --[[ Neotree Keymaps ]]
 vim.keymap.set('n', '<leader>n', '<Cmd>Neotree toggle<CR>', { desc = 'Toggle [N]eotree' })
+
+--[[ Undotree Keymaps ]]
+vim.keymap.set('n', '<leader>u', '<Cmd>UndotreeToggle<CR>', { desc = 'Toggle [U]ndotree' })
+
+--[[ Bookmarks Keymaps ]]
+vim.keymap.set({ "n", "v" }, "<leader>bm", "<cmd>BookmarksMark<cr>",
+    { desc = "[B]ook[M]ark" })
+vim.keymap.set({ "n", "v" }, "<leader>bml", "<cmd>BookmarksGoto<cr>",
+    { desc = "[B]ook[M]ark [L]ist" })
+vim.keymap.set({ "n", "v" }, "<leader>bmc", "<cmd>BookmarksCommands<cr>",
+    { desc = "[B]ook[M]ark [C]ommands" })
+
