@@ -22,8 +22,6 @@ vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { d
 vim.keymap.set('n', '<leader>/', function()
     -- You can pass additional configuration to telescope to change theme, layout, etc.
     require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-        winblend = 10,
-        previewer = false,
     })
 end, { desc = '[/] Fuzzily search in current buffer' })
 
@@ -49,3 +47,5 @@ vim.keymap.set({ "n", "v" }, "<leader>bml", "<cmd>BookmarksGoto<cr>",
 vim.keymap.set({ "n", "v" }, "<leader>bmc", "<cmd>BookmarksCommands<cr>",
     { desc = "[B]ook[M]ark [C]ommands" })
 
+--[[ Navbuddy Keymaps ]]
+vim.keymap.set({ "n", "v" }, "<C-b>", "<cmd>Navbuddy<cr>", { desc = "Nav[B]uddy (but really [B]readcrumbs" })
