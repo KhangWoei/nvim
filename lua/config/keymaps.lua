@@ -36,6 +36,9 @@ vim.keymap.set('n', '<leader>km', require('telescope.builtin').keymaps, { desc =
 
 --[[ Neotree Keymaps ]]
 vim.keymap.set('n', '<leader>n', '<Cmd>Neotree toggle<CR>', { desc = 'Toggle [N]eotree' })
+vim.keymap.set('n', '<leader>nf', '<Cmd> Neotree show filesystem<CR>', { desc = '[N]eotree [F]ilesystems' })
+vim.keymap.set('n', '<leader>nb', '<Cmd> Neotree show buffers<CR>', { desc = '[N]eotree [B]uffers' })
+vim.keymap.set('n', '<leader>ng', '<Cmd> Neotree show git_status<CR>', { desc = '[N]eotree [G]it Status' })
 
 --[[ Undotree Keymaps ]]
 vim.keymap.set('n', '<leader>u', '<Cmd>UndotreeToggle<CR>', { desc = 'Toggle [U]ndotree' })
