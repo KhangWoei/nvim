@@ -7,7 +7,21 @@ local bufferline = {
 }
 
 function bufferline.config()
-    require("bufferline").setup()
+    require("bufferline").setup(
+        {
+            options =
+            {
+                offsets = {
+                    {
+                        filetype = "neo-tree",
+                        text = "NeoTree",
+                        highlight = "Directory",
+                        separator = true
+                    }
+                },
+                diagnostics = "nvim_lsp",
+            }
+        })
 end
 
 return bufferline
