@@ -17,8 +17,8 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 --[[ Telescope Keymaps ]]
 -- See `:help telescope.builtin`
-vim.keymap.set('n', '<leader>srf', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
-vim.keymap.set('n', '<leader>sb', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
+vim.keymap.set('n', '<leader>srf', require('telescope.builtin').oldfiles, { desc = 'Find recently opened files' })
+vim.keymap.set('n', '<leader>sb', require('telescope.builtin').buffers, { desc = 'Find existing buffers' })
 vim.keymap.set('n', '<leader>fb', function()
     -- You can pass additional configuration to telescope to change theme, layout, etc.
     require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
@@ -52,4 +52,15 @@ vim.keymap.set({ "n", "v" }, "<leader>bmc", "<cmd>BookmarksCommands<cr>",
     { desc = "[B]ook[M]ark [C]ommands" })
 
 --[[ Navbuddy Keymaps ]]
-vim.keymap.set({ "n", "v" }, "<C-b>", "<cmd>Navbuddy<cr>", { desc = "Nav[B]uddy (but really [B]readcrumbs" })
+vim.keymap.set({ "n", "v" }, "<leader>b", "<cmd>Navbuddy<cr>", { desc = "Nav[B]uddy (but really [B]readcrumbs" })
+
+-- [[ Neoscroll Keymaps ]]
+local neotree    = {}
+neotree['<C-u>'] = { 'scroll', { '-vim.wo.scroll', 'true', '250' } }
+neotree['<C-d>'] = { 'scroll', { 'vim.wo.scroll', 'true', '250' } }
+neotree['<C-b>'] = { 'scroll', { '-vim.api.nvim_win_get_height(0)', 'true', '450' } }
+neotree['<C-f>'] = { 'scroll', { 'vim.api.nvim_win_get_height(0)', 'true', '450' } }
+neotree['<C-y>'] = { 'scroll', { '-0.10', 'false', '100' } }
+neotree['<C-e>'] = { 'scroll', { '0.10', 'false', '100' } }
+
+require('neoscroll.config').set_mappings(neotree)
