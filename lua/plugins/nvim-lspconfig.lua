@@ -2,7 +2,6 @@
 
 return {
     'neovim/nvim-lspconfig',
-    m
     dependencies = {
         -- Automatically install LSPs to stdpath for neovim
         'williamboman/mason.nvim',

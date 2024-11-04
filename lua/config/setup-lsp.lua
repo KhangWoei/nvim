@@ -57,11 +57,7 @@ require('mason').setup()
 require('mason-lspconfig').setup()
 
 local servers = {
-    bashls = {},
     omnisharp = {},
-    tsserver = {},
-    html = { filetypes = { 'html', 'twig', 'hbs' } },
-
     lua_ls = {
         Lua = {
             workspace = { checkThirdParty = false },
