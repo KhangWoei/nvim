@@ -1,12 +1,8 @@
 -- LSP Configuration & Plugins
 
-return {
+local lspconfig = {
     'neovim/nvim-lspconfig',
     dependencies = {
-        -- Automatically install LSPs to stdpath for neovim
-        'williamboman/mason.nvim',
-        'williamboman/mason-lspconfig.nvim',
-
         {
             "SmiteshP/nvim-navbuddy",
             dependencies = {
@@ -21,6 +17,8 @@ return {
         { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
 
         -- Additional lua configuration, makes nvim stuff amazing!
-        'folke/neodev.nvim',
+        'folke/lazydev.nvim'
     },
 }
+
+return lspconfig
