@@ -40,6 +40,8 @@ local on_attach = function(_, bufnr)
     end, { desc = 'Format current buffer with LSP' })
 end
 
+vim.lsp.set_log_level("debug");
+
 -- document existing key chains
 require('which-key').register {
     ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
@@ -60,12 +62,14 @@ local servers = {
             telemetry = { enable = false },
         },
     },
+    terraformls = {}
 }
 
 local commands = {
     omnisharp = { "dotnet", "/usr/lib/omnisharp-roslyn/OmniSharp.dll" },
     bashls = { "bash-language-server", "start" },
-    lua_ls = { "lua-language-server" }
+    lua_ls = { "lua-language-server" },
+    terraformls = { "terraform-ls", "serve" }
 }
 
 
