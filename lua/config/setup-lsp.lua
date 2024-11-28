@@ -66,7 +66,7 @@ local servers = {
 }
 
 local commands = {
-    omnisharp = { "dotnet", "/usr/lib/omnisharp-roslyn/OmniSharp.dll" },
+    omnisharp = { "dotnet", os.getenv("OMNISHARP_DLL") },
     bashls = { "bash-language-server", "start" },
     lua_ls = { "lua-language-server" },
     terraformls = { "terraform-ls", "serve" }
