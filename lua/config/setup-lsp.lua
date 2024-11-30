@@ -62,14 +62,16 @@ local servers = {
             telemetry = { enable = false },
         },
     },
-    terraformls = {}
+    terraformls = {},
+    pyright = {}
 }
 
 local commands = {
     omnisharp = { "dotnet", os.getenv("OMNISHARP_DLL") },
     bashls = { "bash-language-server", "start" },
     lua_ls = { "lua-language-server" },
-    terraformls = { "terraform-ls", "serve" }
+    terraformls = { "terraform-ls", "serve" },
+    pyright = { "pyright-langserver", "--stdio" }
 }
 
 
