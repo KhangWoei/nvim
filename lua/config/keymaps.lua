@@ -58,10 +58,6 @@ vim.keymap.set({ "n", "v" }, "<leader>b", "<cmd>Navbuddy<cr>", { desc = "Nav[B]u
 local neotree    = {}
 neotree['<C-u>'] = { 'scroll', { '-vim.wo.scroll', 'true', '250' } }
 neotree['<C-d>'] = { 'scroll', { 'vim.wo.scroll', 'true', '250' } }
-neotree['<C-b>'] = { 'scroll', { '-vim.api.nvim_win_get_height(0)', 'true', '450' } }
-neotree['<C-f>'] = { 'scroll', { 'vim.api.nvim_win_get_height(0)', 'true', '450' } }
-neotree['<C-y>'] = { 'scroll', { '-0.10', 'false', '100' } }
-neotree['<C-e>'] = { 'scroll', { '0.10', 'false', '100' } }
 
 require('neoscroll.config').set_mappings(neotree)
 
