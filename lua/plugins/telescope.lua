@@ -1,7 +1,6 @@
 -- telescope.lua
 -- Fuzzy Finder (files, lsp, etc)
-
-return {
+local telescope = {
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
     dependencies = {
@@ -19,18 +18,40 @@ return {
             end,
         },
     },
-    config = function()
-        require('telescope').setup {
-            defaults = {
-                mappings = {
-                    i = {
-                        ['<C-u>'] = false,
-                        ['<C-d>'] = false,
-                    },
+}
+
+function telescope.config()
+    require('telescope').setup {
+        defaults = {
+            mappings = {
+                i = {
+                    ['<C-u>'] = false,
+                    ['<C-d>'] = false,
                 },
             },
-        }
+        },
+    }
 
-        pcall(require('telescope').load_extension, 'fzf')
-    end,
-}
+    pcall(require('telescope').load_extension, 'fzf')
+end
+
+local function search_current_buffer()
+    require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+    })
+end
+
+function telescope.keys()
+    return {
+        { "<leader>srf", ":Telescope oldfiles <CR>",    desc = "[S]earch [R]ecent [F]iles" },
+        { "<leader>sb",  ":Telescope buffers <CR>",     desc = "[S]earch [B]uffers" },
+        { "<leader>scb", search_current_buffer,         desc = "[S]earch [C]urrent [B]uffer" },
+        { "<leader>sd",  ":Telescope diagnostics <CR>", desc = "[S]earch [D]iagnostics" },
+        { "<leader>sg",  ":Telescope live_grep <CR>",   desc = "[S]earch by [G]rep" },
+        { "<leader>sgf", ":Telescope git_files <CR>",   desc = "[S]earch [G]it [F]iles" },
+        { "<leader>sf",  ":Telescope find_files <CR>",  desc = "[S]earch [F]iles" },
+        { "<leader>sh",  ":Telescope help_tags <CR>",   desc = "[S]earch [H]elp" },
+        { "<leader>skm", ":Telescope keymaps <CR>",     desc = "[S]earch [K]ey [M]aps" }
+    }
+end
+
+return telescope
