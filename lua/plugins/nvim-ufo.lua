@@ -47,4 +47,11 @@ function ufo.config()
     })
 end
 
+function ufo.keys()
+    return {
+        { "<leader>ea", require("ufo").openAllFolds,  desc = "[E]xpand [A]ll" },
+        { "<leader>fa", require("ufo").closeAllFolds, desc = "[F]old [A]ll" },
+    }
+end
+
 return ufo

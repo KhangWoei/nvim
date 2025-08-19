@@ -21,7 +21,3 @@ neotree['<C-u>'] = { 'scroll', { '-vim.wo.scroll', 'true', '250' } }
 neotree['<C-d>'] = { 'scroll', { 'vim.wo.scroll', 'true', '250' } }
 
 require('neoscroll.config').set_mappings(neotree)
-
--- [[ Nvim UFO ]]
-vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
-vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
