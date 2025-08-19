@@ -15,12 +15,6 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnos
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
---[[ Neotree Keymaps ]]
-vim.keymap.set('n', '<leader>n', '<Cmd>Neotree toggle<CR>', { desc = 'Toggle [N]eotree' })
-vim.keymap.set('n', '<leader>nf', '<Cmd> Neotree show filesystem<CR>', { desc = '[N]eotree [F]ilesystems' })
-vim.keymap.set('n', '<leader>nb', '<Cmd> Neotree show buffers<CR>', { desc = '[N]eotree [B]uffers' })
-vim.keymap.set('n', '<leader>ng', '<Cmd> Neotree show git_status<CR>', { desc = '[N]eotree [G]it Status' })
-
 --[[ Undotree Keymaps ]]
 vim.keymap.set('n', '<leader>u', '<Cmd>UndotreeToggle<CR>', { desc = 'Toggle [U]ndotree' })
 

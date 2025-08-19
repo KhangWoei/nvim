@@ -49,4 +49,13 @@ function neotree.config()
     )
 end
 
+function neotree.keys()
+    return {
+        { "<leader>n",  ":Neotree toggle <CR>",          desc = "Toggle [N]eotree" },
+        { "<leader>nf", ":Neotree show filesystem <CR>", desc = "[N]eotree [F]ilesystem" },
+        { "<leader>nb", ":Neotree show buffers <CR>",    desc = "[N]eotree [B]uffers" },
+        { "<leader>ng", ":Neotree show git_status <CR>", desc = "[N]eotree [G]it" }
+    }
+end
+
 return neotree
