@@ -1,6 +1,5 @@
 -- bookmarks.lua
-
-return {
+local bookmarks = {
     "LintaoAmons/bookmarks.nvim",
 
     tag = "3.2.0",
@@ -9,3 +8,10 @@ return {
         { "kkharji/sqlite.lua" }
     }
 }
+
+function bookmarks.config()
+    local opts = {}
+    require("bookmarks").setup(opts)
+end
+
+return bookmarks
