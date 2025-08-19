@@ -15,12 +15,6 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnos
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
---[[ Undotree Keymaps ]]
-vim.keymap.set('n', '<leader>u', '<Cmd>UndotreeToggle<CR>', { desc = 'Toggle [U]ndotree' })
-
---[[ Navbuddy Keymaps ]]
-vim.keymap.set({ "n", "v" }, "<leader>b", "<cmd>Navbuddy<cr>", { desc = "Nav[B]uddy (but really [B]readcrumbs" })
-
 -- [[ Neoscroll Keymaps ]]
 local neotree    = {}
 neotree['<C-u>'] = { 'scroll', { '-vim.wo.scroll', 'true', '250' } }
