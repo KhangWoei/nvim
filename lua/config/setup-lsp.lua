@@ -63,7 +63,8 @@ local servers = {
         },
     },
     terraformls = {},
-    pyright = {}
+    pyright = {},
+    ts_ls = {},
 }
 
 local commands = {
@@ -71,7 +72,8 @@ local commands = {
     bashls = { "bash-language-server", "start" },
     lua_ls = { "lua-language-server" },
     terraformls = { "terraform-ls", "serve" },
-    pyright = { "pyright-langserver", "--stdio" }
+    pyright = { "pyright-langserver", "--stdio" },
+    ts_ls = { "typescript-language-server", "--stdio" },
 }
 
 
