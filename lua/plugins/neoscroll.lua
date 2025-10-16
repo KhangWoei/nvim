@@ -6,7 +6,10 @@ local neoscroll = {
 
 function neoscroll.config()
     require('neoscroll').setup({
-        mappings = {}
+        mappings = {
+            ['<C-u>'] = { 'scroll', { '-vim.wo.scroll', 'true', '250' } },
+            ['<C-d>'] = { 'scroll', { 'vim.wo.scroll', 'true', '250' } }
+        }
     })
 end
 
