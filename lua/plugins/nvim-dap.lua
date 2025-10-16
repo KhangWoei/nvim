@@ -19,6 +19,13 @@ function nvim_dap.config()
         dap_python.setup('python3')
     end
 
+    local dap = require('dap')
+    dap.adapters.coreclr = {
+        type = 'executable',
+        command = 'netcoredbg',
+        args = { '--interpreter=vscode' }
+    }
+
     local dap_view = require('dap-view')
     dap_view.setup({
         auto_toggle = true
